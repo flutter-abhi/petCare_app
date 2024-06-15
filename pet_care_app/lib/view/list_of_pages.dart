@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pet_care_app/view/dashbord_dis.dart';
+import 'package:pet_care_app/view/history_page.dart';
+import 'package:pet_care_app/view/profile_page.dart';
 import 'package:pet_care_app/view/shop_dis.dart';
 import 'package:pet_care_app/view/vetarnary_dis.dart';
 
@@ -25,7 +27,8 @@ class _ListOfPagesState extends State<ListOfPages> {
     DashBordDis(),
     VetarnaryDis(),
     Shop(),
-    DashBordDis(),
+    HistoryPage(),
+    ProfilePage(),
   ];
   @override
   Widget build(BuildContext context) {

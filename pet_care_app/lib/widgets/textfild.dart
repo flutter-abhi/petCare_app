@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 
 Widget myTextFild(
@@ -10,6 +12,8 @@ Widget myTextFild(
     child: TextFormField(
       obscureText: isPass,
       decoration: InputDecoration(
+        fillColor: Colors.white,
+        filled: true,
         contentPadding: const EdgeInsets.only(top: 5, left: 10),
         suffixIcon: sufixIcon,
         suffixIconColor: const Color.fromRGBO(250, 200, 162, 1),

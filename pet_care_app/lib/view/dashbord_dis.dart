@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:pet_care_app/view/grooming.dart';
+import 'package:pet_care_app/view/notification_page.dart';
+import 'package:pet_care_app/view/shop_dis.dart';
 import 'package:pet_care_app/view/training.dart';
 import 'package:pet_care_app/view/vetarnary_dis.dart';
 import 'package:pet_care_app/widgets/textfild.dart';
@@ -57,10 +58,18 @@ class _DashBordDisState extends State<DashBordDis> {
                     ],
                   ),
                   const Spacer(),
-                  const Icon(
-                    Icons.notifications_outlined,
-                    size: 25,
-                  ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const NotificationPage();
+                      }));
+                    },
+                    icon: const Icon(
+                      Icons.notifications_outlined,
+                      size: 25,
+                    ),
+                  )
                 ],
               ),
               const SizedBox(
@@ -210,25 +219,33 @@ class _DashBordDisState extends State<DashBordDis> {
                       ),
                     ],
                   ),
-                  Column(
-                    children: [
-                      ClipOval(
-                        child: Image.asset(
-                          "assets/dashbord/category3.png",
-                          height: 55,
-                          width: 55,
-                          fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const Shop();
+                      }));
+                    },
+                    child: Column(
+                      children: [
+                        ClipOval(
+                          child: Image.asset(
+                            "assets/dashbord/category3.png",
+                            height: 55,
+                            width: 55,
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                        "Pet Store",
-                        style: TextStyle(
-                            fontSize: 13, fontWeight: FontWeight.w400),
-                      ),
-                    ],
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        const Text(
+                          "Pet Store",
+                          style: TextStyle(
+                              fontSize: 13, fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
                   ),
                   GestureDetector(
                     onTap: () {
@@ -236,7 +253,7 @@ class _DashBordDisState extends State<DashBordDis> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return  TrainingDis();
+                            return TrainingDis();
                           },
                         ),
                       );
